@@ -520,6 +520,25 @@ SCLTimerDisplay *buttonTimer;
     return txt;
 }
 
+- (void)addCustomTextView:(UITextView *)textView {
+    [self addObservers];
+    
+    // Update view height
+    self.windowHeight += textView.bounds.size.height + 10.0f;
+    
+    [_contentView addSubview:textView];
+    [_inputs addObject:textView];
+    
+    // If there are other fields in the inputs array, get the previous field and set the
+    // return key type on that to next.
+    if (_inputs.count > 1)
+    {
+        NSUInteger indexOfCurrentField = [_inputs indexOfObject:textView];
+        UITextField *priorField = _inputs[indexOfCurrentField - 1];
+        priorField.returnKeyType = UIReturnKeyNext;
+    }
+}
+
 - (void)addCustomTextField:(UITextField *)textField
 {
     // Update view height

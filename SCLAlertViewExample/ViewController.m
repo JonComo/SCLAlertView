@@ -103,10 +103,14 @@ NSString *kAttributeTitle = @"Attributed string operation successfully completed
 {
     SCLAlertView *alert = [[SCLAlertView alloc] init];
     
-    SCLTextView *textField = [alert addTextField:@"Enter your name"];
+    //SCLTextView *textField = [alert addTextField:@"Enter your name"];
+    
+    UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0.f, 0.f, 120.f, 100.f)];
+    
+    [alert addCustomTextView:textView];
     
     [alert addButton:@"Show Name" actionBlock:^(void) {
-        NSLog(@"Text value: %@", textField.text);
+        NSLog(@"Text value: %@", textView.text);
     }];
     
     [alert showEdit:self title:kInfoTitle subTitle:kSubtitle closeButtonTitle:kButtonTitle duration:0.0f];
