@@ -76,6 +76,8 @@ typedef NS_ENUM(NSInteger, SCLAlertViewBackground)
     Transparent
 };
 
+@property (nonatomic, strong) UIWindow *SCLAlertWindow;
+
 /** Title Label
  *
  * The text displayed as title.

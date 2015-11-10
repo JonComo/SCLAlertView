@@ -40,7 +40,6 @@
 @property (nonatomic, strong) NSString *buttonsFontFamily;
 @property (nonatomic, strong) UIViewController *rootViewController;
 @property (nonatomic, strong) UIWindow *previousWindow;
-@property (nonatomic, strong) UIWindow *SCLAlertWindow;
 @property (nonatomic, copy) DismissBlock dismissBlock;
 @property (nonatomic, weak) id<UIGestureRecognizerDelegate> restoreInteractivePopGestureDelegate;
 @property (nonatomic) BOOL canAddObservers;
